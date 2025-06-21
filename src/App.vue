@@ -40,9 +40,6 @@ const handleSortChange = (config) => {
   min-height: 100vh;
   
   .main-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
     padding-top: 20px;
   }
 }
