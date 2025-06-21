@@ -54,7 +54,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-input, textarea {
+input, textarea, button {
   font-family: 'Raleway', sans-serif;
 }
 
