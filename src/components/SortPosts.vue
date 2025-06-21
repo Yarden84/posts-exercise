@@ -136,10 +136,15 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 .sort-container {
+  width: 200px;
   display: flex;
   align-items: center;
   gap: 12px;
   min-width: 200px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 
   .sort-by-wrapper {
     width: 370px;

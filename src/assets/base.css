@@ -54,6 +54,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+input, textarea {
+  font-family: 'Raleway', sans-serif;
+}
+
 .tag-item {
   height: 24px;
   background-color: var(--color-primary);

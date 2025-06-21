@@ -70,81 +70,86 @@ watch(searchQuery, () => {
 
 <style lang="scss" scoped>
 .search-container {
-  width: 100%;
-}
-
-.search-input-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 0 12px;
-  transition: all 0.2s ease;
-
-  &:focus-within {
-    border-color: var(--color-primary-light);
-    box-shadow: 0 0 0 3px var(--color-primary-light-2);
+  width: 300px;
+  
+  @media (max-width: 768px) {
+    width: 100%;
   }
-
-  .search-icon {
-    width: 18px;
-    height: 18px;
-    color: #999;
-    margin-right: 8px;
-    flex-shrink: 0;
-  }
-
-  .search-input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 12px 0;
-    font-size: 14px;
-    background: transparent;
-    color: #333;
-
-    &::placeholder {
-      color: #999;
-    }
-  }
-
-  .clear-btn {
-    background: none;
-    border: none;
-    color: #999;
-    font-size: 18px;
-    cursor: pointer;
-    padding: 4px;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
+  
+  .search-input-wrapper {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0 12px;
     transition: all 0.2s ease;
-    margin-left: 8px;
-
-    &:hover {
-      background-color: #f5f5f5;
-      color: #666;
+  
+    &:focus-within {
+      border-color: var(--color-primary-light);
+      box-shadow: 0 0 0 3px var(--color-primary-light-2);
     }
-  }
-
-  .search-spinner {
-    margin-left: 8px;
-    
-    .spinner {
-      width: 16px;
-      height: 16px;
-      border: 2px solid #f3f3f3;
-      border-top: 2px solid var(--color-primary-light);
+  
+    .search-icon {
+      width: 18px;
+      height: 18px;
+      color: #999;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+  
+    .search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 12px 0;
+      font-size: 14px;
+      background: transparent;
+      color: #333;
+  
+      &::placeholder {
+        color: #999;
+      }
+    }
+  
+    .clear-btn {
+      background: none;
+      border: none;
+      color: #999;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 4px;
       border-radius: 50%;
-      animation: spin 1s linear infinite;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      margin-left: 8px;
+  
+      &:hover {
+        background-color: #f5f5f5;
+        color: #666;
+      }
+    }
+  
+    .search-spinner {
+      margin-left: 8px;
+      
+      .spinner {
+        width: 16px;
+        height: 16px;
+        border: 2px solid #f3f3f3;
+        border-top: 2px solid var(--color-primary-light);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
     }
   }
 }
+
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
