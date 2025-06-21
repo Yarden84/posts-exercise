@@ -4,7 +4,7 @@ import Navbar from './components/Navbar.vue'
 import PostsList from './components/PostsList.vue'
 
 const searchQuery = ref('')
-const sortConfig = ref({ sortBy: 'id', sortOrder: 'desc' })
+const sortConfig = ref({ sortBy: 'id', sortOrder: 'asc' })
 
 const handleSearch = (query) => {
   searchQuery.value = query

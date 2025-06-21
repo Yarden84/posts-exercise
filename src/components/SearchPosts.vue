@@ -84,8 +84,8 @@ watch(searchQuery, () => {
   transition: all 0.2s ease;
 
   &:focus-within {
-    border-color: rgb(54, 121, 255);
-    box-shadow: 0 0 0 3px rgba(54, 121, 255, 0.1);
+    border-color: var(--color-primary-light);
+    box-shadow: 0 0 0 3px var(--color-primary-light-2);
   }
 
   .search-icon {
@@ -139,7 +139,7 @@ watch(searchQuery, () => {
       width: 16px;
       height: 16px;
       border: 2px solid #f3f3f3;
-      border-top: 2px solid rgb(54, 121, 255);
+      border-top: 2px solid var(--color-primary-light);
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }

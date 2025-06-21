@@ -10,7 +10,7 @@ const props = defineProps({
   },
   sortConfig: {
     type: Object,
-    default: () => ({ sortBy: 'id', sortOrder: 'desc' })
+    default: () => ({ sortBy: 'id', sortOrder: 'asc' })
   }
 })
 
@@ -38,6 +38,9 @@ const fetchPosts = async (page = 1, append = false) => {
     
     
     if (props.sortConfig && !props.searchQuery) {
+      console.log("props.sortConfig");
+      console.log(props.sortConfig);
+      
       url += `&sortBy=${props.sortConfig.sortBy}&order=${props.sortConfig.sortOrder}`
     }
     
