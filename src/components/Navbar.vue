@@ -91,7 +91,6 @@ const closeMobileMenu = () => {
           />
         </div>
         
-        <!-- Mobile menu toggle -->
         <button class="mobile-menu-toggle" @click="toggleMobileMenu">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
@@ -99,7 +98,6 @@ const closeMobileMenu = () => {
         </button>
       </div>
 
-      <!-- Mobile menu overlay -->
       <div class="mobile-menu-overlay" :class="{ open: isMobileMenuOpen }" @click="closeMobileMenu">
         <div class="mobile-menu-content" @click.stop>
           <div class="mobile-controls">

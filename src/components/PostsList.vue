@@ -172,7 +172,6 @@ onUnmounted(() => {
       No more posts to load.
     </div>
 
-    <!-- Reusable Post Form Modal -->
     <PostFormModal 
       :is-open="modalState.isOpen"
       :mode="modalState.mode"

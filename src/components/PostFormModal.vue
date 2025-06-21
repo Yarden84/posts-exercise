@@ -200,7 +200,6 @@ const handleSubmit = async () => {
             @keydown="handleTagKeydown"
           />
           
-          <!-- Display existing tags -->
           <div v-if="formData.tags.length > 0" class="tags-display">
             <span 
               v-for="(tag, index) in formData.tags" 

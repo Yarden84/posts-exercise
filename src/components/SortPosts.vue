@@ -80,7 +80,6 @@ onUnmounted(() => {
 
 <template>
   <div class="sort-container">
-    <!-- Sort By Dropdown -->
     <div class="sort-by-wrapper">
       <label class="sort-label">Sort by:</label>
       <div class="custom-select">
@@ -118,7 +117,6 @@ onUnmounted(() => {
       </div>
     </div>
 
-    <!-- Sort Order Button -->
     <button 
       @click="toggleSortOrder"
       class="sort-order-btn"
