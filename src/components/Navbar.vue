@@ -123,134 +123,134 @@ const closeMobileMenu = () => {
   border-bottom: 1px solid #ddd;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
-.navbar-container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 70px;
-}
+  .navbar-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
 
-.navbar-logo {
-    width: 140px;
-    height: auto;
-}
+    .navbar-logo {
+      width: 140px;
+      height: auto;
+    }
 
-.navbar-fields {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
+    .navbar-fields {
+      display: flex;
+      align-items: center;
+      gap: 20px;
 
-.navbar-controls {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
+      .navbar-controls {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
 
-.mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: #333;
-  cursor: pointer;
-  padding: 8px;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
+      .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: #333;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
 
-  &:hover {
-    background-color: #f5f5f5;
+        &:hover {
+          background-color: #f5f5f5;
+        }
+
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    .mobile-menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1001;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+
+      &.open {
+        opacity: 1;
+        visibility: visible;
+
+        .mobile-menu-content {
+          transform: translateY(0);
+        }
+      }
+
+      .mobile-menu-content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+
+        .mobile-controls {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+    }
   }
-
-  svg {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-.mobile-menu-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1001;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-
-  &.open {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-.mobile-menu-content {
-  position: absolute;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-  padding: 20px;
-  border-bottom: 1px solid #ddd;
-  transform: translateY(-100%);
-  transition: transform 0.3s ease;
-
-  .mobile-menu-overlay.open & {
-    transform: translateY(0);
-  }
-}
-
-.mobile-controls {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
 }
 
 @media (max-width: 768px) {
-  .navbar-container {
-    padding: 0 15px;
-    height: 60px;
-  }
+  .navbar {
+    .navbar-container {
+      padding: 0 15px;
+      height: 60px;
 
-  .navbar-controls {
-    display: none;
-  }
+      .navbar-fields {
+        .navbar-controls {
+          display: none;
+        }
 
-  .mobile-menu-toggle {
-    display: block;
-  }
+        .mobile-menu-toggle {
+          display: block;
+        }
+      }
 
-  .mobile-menu-overlay {
-    display: block;
+      .mobile-menu-overlay {
+        display: block;
 
-    &.open {
-      opacity: 1;
-      visibility: visible;
+        &.open {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
     }
-  }
-
-  .navbar-left .navbar-brand {
-    font-size: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .navbar-container {
-    padding: 0 10px;
-  }
+  .navbar {
+    .navbar-container {
+      padding: 0 10px;
 
-  .navbar-left .navbar-brand {
-    font-size: 18px;
-  }
-
-  .mobile-menu-content {
-    padding: 15px;
+      .mobile-menu-overlay {
+        .mobile-menu-content {
+          padding: 15px;
+        }
+      }
+    }
   }
 }
 </style> 
