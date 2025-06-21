@@ -7,9 +7,8 @@ A Vue 3 application for displaying and managing posts with search, sorting, and 
 - **Post Display**: View posts with infinite scroll pagination
 - **Search**: Search posts by title or content
 - **Sorting**: Sort posts by ID, title, or other criteria
-- **CRUD Operations**: Add, edit, and manage posts
+- **CRUD Operations**: Add and edit posts
 - **Responsive Design**: Mobile-friendly interface
-- **Real-time Updates**: Dynamic content updates without page refresh
 
 ### Important Note: Frontend-Only Operations
 
@@ -18,7 +17,6 @@ A Vue 3 application for displaying and managing posts with search, sorting, and 
 - **Added posts** will only appear in the current session and will be lost on page refresh
 - **Edited posts** will revert to their original state on page refresh
 - **New/edited posts** will not appear in search results or be affected by sorting operations, as these operations query the original API data
-- **Data persistence** is not implemented - all changes are temporary
 
 ## Tech Stack
 
@@ -26,7 +24,6 @@ A Vue 3 application for displaying and managing posts with search, sorting, and 
 - **Build Tool**: Vite
 - **Styling**: SCSS
 - **API**: DummyJSON API for posts data
-- **Development Tools**: Vue DevTools integration
 
 ## Prerequisites
 
@@ -70,6 +67,7 @@ npm run preview
 
 ## Project Structure
 
+```bash
 src/
 ├── components/ # Vue components
 │ ├── Navbar.vue # Navigation and search/sort controls
@@ -81,3 +79,4 @@ src/
 ├── assets/ # Static assets
 ├── App.vue # Main application component
 └── main.js # Application entry point
+```
