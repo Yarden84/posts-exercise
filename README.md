@@ -70,8 +70,8 @@ npm run preview
 ```bash
 src/
 ├── components/ # Vue components
-│ ├── Navbar.vue # Navigation and search/sort controls
-│ ├── PostsList.vue # Main posts display with infinite scroll
+│ ├── Navbar.vue # Navigation with search/sort controls
+│ ├── PostsList.vue # Main posts display
 │ ├── Post.vue # Individual post component
 │ ├── PostFormModal.vue # Add/edit post modal
 │ ├── SearchPosts.vue # Search functionality
