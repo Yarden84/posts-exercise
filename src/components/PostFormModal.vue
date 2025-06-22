@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch, computed } from 'vue'
+import { ref, watch } from 'vue'
 
 const props = defineProps({
   isOpen: {
@@ -27,14 +27,6 @@ const formData = ref({
 const isSubmitting = ref(false)
 const error = ref(null)
 const newTag = ref('')
-
-const modalTitle = computed(() => props.mode === 'edit' ? 'Edit Post' : 'Add New Post')
-const submitButtonText = computed(() => {
-  if (isSubmitting.value) {
-    return props.mode === 'edit' ? 'Updating...' : 'Adding...'
-  }
-  return props.mode === 'edit' ? 'Update Post' : 'Add Post'
-})
 
 const resetForm = () => {
   formData.value = { title: '', body: '', tags: [] }
@@ -163,7 +155,7 @@ const handleSubmit = async () => {
   <div v-if="isOpen" class="modal-overlay" @click="closeModal">
     <div class="modal-content" @click.stop>
       <div class="modal-header">
-        <h3>{{ modalTitle }}</h3>
+        <h3>{{ mode === 'edit' ? 'Edit Post' : 'Add New Post' }}</h3>
         <button class="close-btn" @click="closeModal">&times;</button>
       </div>
       
@@ -227,7 +219,7 @@ const handleSubmit = async () => {
             Cancel
           </button>
           <button type="submit" :disabled="isSubmitting" class="submit-btn">
-            {{ submitButtonText }}
+            {{ isSubmitting ? (mode === 'edit' ? 'Updating...' : 'Adding...') : (mode === 'edit' ? 'Update Post' : 'Add Post') }}
           </button>
         </div>
       </form>

@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import Post from './Post.vue'
 import PostFormModal from './PostFormModal.vue'
 
@@ -10,7 +10,7 @@ const props = defineProps({
   },
   sortConfig: {
     type: Object,
-    default: () => ({ sortBy: 'id', sortOrder: 'asc' })
+    default: () => ({ sortBy: 'title', sortOrder: 'asc' })
   }
 })
 
@@ -32,17 +32,13 @@ const fetchPosts = async (page = 1, append = false) => {
     error.value = '';
     loading.value = true;
     const skip = (page - 1) * limit;
+    
 
     
     let url = props.searchQuery ? `https://dummyjson.com/posts/search?q=${encodeURIComponent(props.searchQuery)}` : `https://dummyjson.com/posts?limit=${limit}&skip=${skip}`
     
     
-    if (props.sortConfig && !props.searchQuery) {
-      console.log("props.sortConfig");
-      console.log(props.sortConfig);
-      
-      url += `&sortBy=${props.sortConfig.sortBy}&order=${props.sortConfig.sortOrder}`
-    }
+    if (props.sortConfig) url += `&sortBy=${props.sortConfig.sortBy}&order=${props.sortConfig.sortOrder}`
     
     const response = await fetch(url)
     
@@ -92,11 +88,9 @@ watch(() => props.searchQuery, () => {
 })
 
 watch(() => props.sortConfig, () => {
-  if (!props.searchQuery) {
     currentPage.value = 1
     hasMorePosts.value = true
     fetchPosts(1, false)
-  }
 }, { deep: true })
 
 const openAddModal = () => {
@@ -138,10 +132,6 @@ onMounted(() => {
   fetchPosts()
   window.addEventListener('scroll', handleScroll)
 })
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
 </script>
 
 <template>
@@ -160,7 +150,7 @@ onUnmounted(() => {
     </div>
     
     <Post 
-    v-else
+        v-else
         v-for="post in posts" 
         :key="post.id" 
         :post="post" 
